@@ -73,6 +73,15 @@ describe('User Model Unit Tests:', function() {
 				done;
 		});
 	});
+		
+		it('should be able to show an error if trying to save without an email', function(done) {
+			user.email = '';
+			return user.save(function(err) {	
+				should.exist(err);
+				done();
+			});
+		})
+	
 
 	after(function(done) {
 		User.remove().exec();
