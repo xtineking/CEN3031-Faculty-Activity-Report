@@ -70,17 +70,17 @@ describe('User Model Unit Tests:', function() {
 			user.password = '1'
 			return user.save(function(err) {
 				should.exist(err);
-				done;
+				done();
 		});
 	});
 		
-		it('should be able to show an error if trying to save without an email', function(done) {
-			user.email = '';
+		it('should be able to show an error if trying to save without a last name', function(done) {
+			user.lastName = '';
 			return user.save(function(err) {	
 				should.exist(err);
 				done();
 			});
-		})
+		});
 	
 
 	after(function(done) {
